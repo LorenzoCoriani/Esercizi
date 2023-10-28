@@ -16,22 +16,21 @@ class Punto{
 	}
 	
 	Punto(){		//crea un punto nel origine
-		x = 0;
-		y = 0;
-		name = "o";
-		
+		this.x = 0;
+		this.y = 0;
+		this.name = "o";
 	}
 	
 	//-----------
 	double distanza(Punto p){
 		double res;
-		res = Math.sqrt(Math.pow((p.x-x),2) + Math.pow((p.y-y),2));
+		res = Math.sqrt(Math.pow((p.x-this.x),2) + Math.pow((p.y-this.y),2));
 		return res;
 	}
 	
-	boolean equal(Punto p2){
+	boolean equal(Punto p){
 		boolean tmp;
-		if(p2.x==this.x && p2.y==this.y){
+		if(p.x==this.x && p.y==this.y){
 			tmp = true;
 		}
 		else{
@@ -39,9 +38,10 @@ class Punto{
 		}
 		return tmp;
 	}
+	
 	String toStringa(){
 		String res;
-		
+
 		res = "{ Nome: " + name;
 		res += " X: " + x;
 		res +="  Y: " + y;

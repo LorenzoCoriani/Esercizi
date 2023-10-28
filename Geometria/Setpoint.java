@@ -4,10 +4,6 @@ class Setpoint{
 	Punto pvet[]; // reference dell'array
 	String nome="";
 	
-	Setpoint(Punto pvet[]){
-		this.pvet=pvet;
-	}
-	
 	Setpoint(int np){
 		pvet= new Punto[np];
 	}

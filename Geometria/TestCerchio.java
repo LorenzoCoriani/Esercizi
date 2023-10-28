@@ -1,13 +1,15 @@
 class TestCerchio {
     public static void main(String[] args) {
-	
-	double area=0,circonferenza=0;
-       
-	Cerchio c = new Cerchio(5.0);
-	area = c.calcolaArea();
-        circonferenza = c.calcolaCirconferenza();
-
+        Cerchio cerchio = new Cerchio(5.0);
+	Cilindro cilindro = new Cilindro("nome", 5,9);
+        double area = cerchio.area();
+        double circonferenza = cerchio.circonferenza();
+	double areacilindro=cilindro.areacilindro();
+	double volumecilindro=cilindro.volumecilindro();
+	    
         System.out.println("Area del cerchio: " + area);
         System.out.println("Circonferenza del cerchio: " + circonferenza);
+	System.out.println("area del cilindro: " + areacilindro);
+	System.out.println("volume del cilindro: " + volumecilindro);
     }
 }

@@ -13,16 +13,20 @@ class Cerchio{
 		this.raggio=0;
 		
 	}
+		
+		
+	//metodi descrittori
+	
 	
 	// Metodo per calcolare l'area del cerchio
-	double calcolaArea() {
-		double a=0;
-		a=Math.PI*(Math.pow(raggio,2));
-		return a;
+	double area() {
+	    double a;
+	    a= Math.PI * Math.pow(this.raggio, 2);
+            return a;
 	}
-	double calcolaCirconferenza() {
-		double c=0;
-		c=  2 * Math.PI * raggio;
+	double circonferenza() {
+		double c;
+		c=  2 * Math.PI * this.raggio;
 		return c;
 	}
 	

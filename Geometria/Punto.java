@@ -4,6 +4,7 @@ Classe: 4f
 File: Punto.java
 */
 import java.io.*;
+import java.lang.Math;
 class Punto{
 	
 	double x,y;	//coordinate cartesiane
@@ -78,10 +79,11 @@ class Punto{
 		this.y += deltaY;
 	}
 	
-	public double calcolaAngolo() {
-		return Math.atan2(this.y, this.x);
+	public double calcolaAngolo(Punto p) {
+		double m;//angolo
+		m=Math.atan2(this.y-p.y,this.x-p.x);
+		return m;
 	}
 
 
 }
-

@@ -13,13 +13,13 @@ class RegistroEventi{
 		numeroEventi = 0;
 	}
 	
-	//metodo che aggiunge gli eventi nel registro e se il registro e verifica se il registro è pieno
-	void aggiungiEvento(Evento evento){
+	//metodo che aggiunge gli eventi nel registro e se il registro e verifica se il registro ï¿½ pieno
+	void aggiungiEvento(Evento evento)throws CapacitaMassimaException{
 		if (numeroEventi < capacitaMassima){
 		    eventi[numeroEventi] = evento;
 		    numeroEventi++;
 		} else {
-		    System.out.println("Il registro è pieno, impossibile aggiungere altri eventi.");
+			throw new CapacitaMassimaException();
 		}
 	}
 	
@@ -79,4 +79,3 @@ class RegistroEventi{
 		return eventiData;		
 	}
 }
-

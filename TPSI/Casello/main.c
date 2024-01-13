@@ -8,8 +8,8 @@ Classe:4^f
 #include <unistd.h>
 
 #define NUM_VARCHI 5 // Numero dei varchi
-#define TEMPO_SERVIZIO 5 // Tempo di attesa per servire un'auto
-#define ARRIVO_AUTO 1 // Tempo di arrivo di una nuova auto
+#define TEMPO_SERVIZIO 30 // Tempo di attesa per servire un'auto
+#define ARRIVO_AUTO 60 // Tempo di arrivo di una nuova auto
 #define INTERVALLO_STAMPA 1 // Tempo di arrivo di una nuova auto
 
 pthread_mutex_t mutex[NUM_VARCHI] = {PTHREAD_MUTEX_INITIALIZER};
@@ -64,10 +64,6 @@ void* generatore_auto(void* arg) {
 void* stampa_stato(void* arg) {
     while(1) {
         sleep(INTERVALLO_STAMPA);
-
-		// torno a capo e pulisco lo schermo
-		// printf("\033[2J");
-		// printf("\033[%d;%dH", 0, 0);
 
 		float varchi_occupati = 0.0;
 

@@ -16,10 +16,28 @@ class Punto{
 		this.y = y;
 		this.name = name;
 	}
+	
 	Punto(){		//crea un punto nel origine
 		this.x = 0;
 		this.y = 0;
 		this.name = "origin";
+	}
+	
+	Punto(String formato){
+		
+		int inizio=0,fine=0; // inizio e fine della sottostringa da  convertire
+		double x,y;
+		
+		formato=formato.trim();
+		fine=formato.indexOf("(");
+		this.name=formato.substring(inizio,fine);
+		inizio= fine;
+		fine=formato.indexOf(";");
+		this.x=Double.parseDouble(formato.substring(inizio+1,fine));
+		inizio=fine;
+		fine=formato.indexOf(")");
+		this.y=Double.parseDouble(formato.substring(inizio+1,fine));
+		
 	}
 	
 	//descrittori
